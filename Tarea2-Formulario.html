@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tarea 2 - Formulario</title>
+</head>
+<body>
+    <form name="formularioPersonas">
+     <h1>Datos Personales</h1> 
+     <p>
+         Nombre(s):
+     </p>
+     <p>
+         <input
+            type="text"
+            name="nombre"
+            placeholder="Escriba su Nombre"
+            autocomplete="on"
+         />
+     <p>
+         Primer Apellido:
+     </p>
+     <p>
+         <input
+            type="text"
+            name="apellido1"
+            placeholder="Escriba su 1er Apellido"
+            autocomplete="on"
+         />
+     </p>
+     </p>
+     <p>
+         Segundo Apellido:
+     </p>
+     <p>
+         <input
+            type="text"
+            name="apellido2"
+            placeholder="Escriba su 2nd Apellido"
+            autocomplete="on"
+        />
+     </p>
+     <p>
+        <label>Ingrese su Número de Teléfono</label>
+     </p>
+     <p>
+        
+        <input 
+            type="tel"
+            name="telefono"
+            placeholder="+(506) 8888-8888"
+        >
+    </p>
+     <p>
+        <label>Ingrese su Correo Electrónico</label>
+     </p>
+     <p>
+        
+        <input 
+            type="email"
+            name="email"
+            placeholder="xxxxxx@uamcr.net"
+        >
+    </p>
+     <p>
+         Fecha de Nacimiento
+     </p>
+     <p>
+         <input
+            type="date"
+            name=fechaNacimiento
+            autocomplete="on"
+         />
+     </p>
+     <p>Seleccione su Género</p>
+     <div>
+         <input 
+            type="radio" 
+            name="Genero" 
+            value="Masculino" 
+            checked
+         >
+         <label for="Masculino">Masculino</label>
+    <div>
+        <input 
+            type="radio"
+            name="Genero"
+            value="Femenino"
+         >
+        <label for="Femenino">Femenino</label>   
+    </div>
+    <div>
+        <input
+            type="radio"
+            name="Genero"
+            value="Transgenero"
+        >
+        <label for="Transgenero">Transgenero</label>
+    </div>
+   
+      
+     </div>
+     <br>
+     <label>Seleccione su Estado Civil</label>  
+     <p>
+         <input type="checkbox" name="estadoCivil" value="Soltero(a)" onclick="myFun(this)" checked="true"/>
+         <label>Soltero(a)</label>
+         <input type="checkbox" name="estadoCivil" value="Casado(a)" onclick="myFun(this)"/>
+         <label>Casado(a)</label>
+         <input type="checkbox" name="estadoCivil" value="Comprometido(a)" onclick="myFun(this)"/>
+         <label>Comprometido(a)</label>
+         <input type="checkbox" name="estadoCivil" value="unionLibre" onclick="myFun(this)"/>
+         <label>únion Libre</label>
+    
+         <script>
+             function myFun(checkbox){
+                 var checkboxes = document.getElementsByName('estadoCivil')
+                 checkboxes.forEach((item) => { 
+                    if(item !== checkbox)item.checked = false
+                 })
+             }
+         </script>
+
+
+     </p>
+     <p>
+     <label>Años de Experiencia Laboral</label>
+     </p>
+     <p>
+         <input 
+            type="number"
+            name="nExperienciaLaboral"
+            placeholder="Seleccione un valor"
+
+         >
+     </p>
+     <div>
+     <label>Seleccione sus Estudios</label>
+        <p>
+            <input type="checkbox" name="Educacion" value="Primaria"/>
+            <label>Primaria</label>
+            <br>
+            <input type="checkbox" name="Educacion" value="Secundaria"/>
+            <label>Secundaria</label>
+            <br>
+            <input type="checkbox" name="Educacion" value="Técnica"/>
+            <label>Técnica</label>
+            <br>
+            <input type="checkbox" name="Educacion" value="Terciaria o Colegio Universitario"/>
+            <label>Terciaria o Colegio Universitario</label>
+            <br>
+            <input type="checkbox" name="Educacion" value="Diplomado"/>
+            <label>Diplomado</label>
+            <br>
+            <input type="checkbox" name="Educacion" value="Bachillerato"/>
+            <label>Bachillerato</label>
+            <br>
+            <input type="checkbox" name="Educacion" value="Licenciatura"/>
+            <label>Licenciatura</label>
+            <br>
+            <input type="checkbox" name="Educacion" value="Maestria"/>
+            <label>Maestria</label>
+            <br>
+            <input type="checkbox" name="Educacion" value="Doctorado"/>
+            <label>Doctorado</label>
+            <br>
+            <input type="checkbox" name="Educacion" value="Estudios post doctorales"/>
+            <label>Estudios post doctorales</label>
+            <br>
+            <input type="checkbox" name="Educacion" value="Posgrados"/>
+            <label>Posgrados</label>
+            <br>
+         </p>
+     </div>
+     <div>
+        <p>
+            Descripción Personal
+        </p>
+     
+         <input 
+            type="textarea"
+            name="DescripcionPersonal"
+                  
+         >
+     </div>
+     <br>
+     <div>
+        <p>
+            Dirección
+        </p>
+        <p>Seleccione una Provincia</p>
+        <select>
+            <option value="SJ">San José</option>
+            <option value="CA">Cartago</option>
+        </select>
+        <p>Seleccione un Cantón</p>
+        <select name="Cantones">
+            <optgroup label="San José">
+                <option value="1">San José</option>
+                <option value="2">Acosta</option>
+                <option value="3">Alajuelita</option>
+                <option value="4">Aserrí</option>
+                <option value="5">Curridabat</option>               
+
+            </optgroup>
+
+            <optgroup label="Cartago">
+                <option value="1">Cartago</option>
+                <option value="2">Alvarado</option>
+                <option value="3">El Guarco</option>
+                <option value="4">Jiménez</option>
+                <option value="5">La Unión</option>               
+
+            </optgroup>
+
+            
+        </select>
+     </div>
+     <br>
+     <div>
+     <p>Ingrese un Password</p>
+        <input 
+            type="password"
+            name="password"
+            placeholder="Contraseña"
+        >
+        <input type="hidden" value="Enviar">
+
+        <p>Re-ingrese su nuevo Password</p>
+        <input 
+            type="password"
+            name="passwordValidacion"
+            placeholder="Re-ingrese la Contraseña"
+        />
+        <input type="hidden" value="Enviar">
+
+     </div>
+     <br>
+     <p>Seleccione la Semana en la que Puede Ser Contactado</p>
+        <input type="week">
+     <br>
+     <p>Seleccione el Horario en el que Puede Ser Contactado</p>
+        <input type="time">
+     <br>
+     <br>
+    <p>Seleccion los Dias de Preaviso que Debe Realizar</p>
+        <input
+            type="range"
+            step="1"
+            max="30"
+            value="0"
+        >
+
+
+    
+    <br>
+    <br>
+    <input
+        type="image"
+        src="send.png"
+        alt="Enviar"
+        width="50"
+        height="50"
+    >
+    </form>
+    
+</body>
+</html>
+

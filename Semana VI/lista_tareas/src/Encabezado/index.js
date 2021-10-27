@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react'
 import './Encabezado.css'
 function Encabezado({completadas, total}){
     return(
@@ -7,5 +7,4 @@ function Encabezado({completadas, total}){
         </h1>
     )
 }
-
 export { Encabezado }

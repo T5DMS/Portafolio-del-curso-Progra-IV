@@ -6,7 +6,7 @@
     align-items: center;
     margin-top: 24px;
     box-shadow: 0px 5px 50px rgba(32red, 32, 40, 0.15);
-    width: calc(100% - 60px);
+    width: calc(100% 60px);
 }
 .Icon{
     cursor: pointer;
@@ -20,12 +20,11 @@
 }
 .Icon-check{
     position: absolute;
-    left: 50px;
-
+    left:50px;
 }
 .Icon-delete{
     position: absolute;
-    right: 30px;
+    right:30px;
 }
 .Tarea-p{
     font-size: 14px;

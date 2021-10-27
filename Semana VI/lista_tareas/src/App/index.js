@@ -1,6 +1,6 @@
-import './App.css';
+import './App.css'
 import React from 'react'
-import { Encabezado} from '../Encabezado/'
+import { Encabezado } from '../Encabezado/'
 import { BarraBusqueda } from '../BarraBusqueda/'
 import { ListaTareas } from '../ListaTareas/'
 import { Tarea } from '../Tarea/'
@@ -8,14 +8,10 @@ import { Tarea } from '../Tarea/'
 
 function App() {
   const tareasDefault = [
-    {texto: "Tarea 1", completada: false},
-    {texto: "Tarea 2", completada: false},
-    {texto: "Tarea 3", completada: false}
+    {texto: "Tarea 1 XX", completada: false},
+    {texto: "Tarea 2 XX", completada: false},
+    {texto: "Tarea 3", completada: true}
   ]
-  
-  const tareasCompletadas = tareasDefault.filter(tarea => tarea.completada).length
-  const totalTareas = tareasDefault.length
-
 
   const miListaTareas = 'MI_LISTA_TAREAS'
   const almacenamientoLocal = localStorage.getItem(miListaTareas)
@@ -27,11 +23,13 @@ function App() {
   }else{
     tareasGuardadas = JSON.parse(almacenamientoLocal)
   }
-
-
+  
   //Hooks de React para interactuar con el DOM
   const[tareas, setTareas] = React.useState(tareasGuardadas)
   const [valorBuscado, buscarTarea] = React.useState('')
+
+  const tareasCompletadas = tareas.filter(tarea => tarea.completada).length
+  const totalTareas = tareas.length
 
   //Comportamiento de busqueda
   let tareasBuscadas = []
@@ -57,17 +55,14 @@ function App() {
   }
 
   const completar = (texto) =>{
-    // eslint-disable-next-line
     const indice = tareas.findIndex(tarea => tarea.texto == texto)
     const nuevaLista = [...tareas]
     nuevaLista[indice].completada = !nuevaLista[indice].completada
     guardar(nuevaLista)
     setTareas(nuevaLista)
-  }  
-  
+  }
 
   const borrar = (texto) =>{
-    // eslint-disable-next-line
     const indice = tareas.findIndex(tarea => tarea.texto == texto)
     const nuevaLista = [...tareas]
     nuevaLista.splice(indice, 1)
@@ -95,7 +90,7 @@ function App() {
           />
         ))}
       </ListaTareas>
-    </React.Fragment>
+    </React.Fragment> 
   )
 }
 

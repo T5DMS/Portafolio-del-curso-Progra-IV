@@ -1,12 +1,12 @@
-import React from 'react'
+import React from "react";
 import './ListaTareas.css'
 function ListaTareas(props){
-    return (
+    return(
         <section>
             <ul>
                 {props.children}
             </ul>
         </section>
     )
-}
+} 
 export { ListaTareas }

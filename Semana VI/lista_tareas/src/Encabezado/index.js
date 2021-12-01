@@ -1,10 +1,14 @@
-import React from 'react'
+import React from 'react';
 import './Encabezado.css'
-function Encabezado({completadas, total}){
+import { AppContext } from '../Context/'
+
+function Encabezado(){
+    const {taresCompletadas, totalTareas} = React.useContext(AppContext)
     return(
         <h1 className="Encabezado">
-            Tareas completadas {completadas} de {total}
+            Tareas completadas {taresCompletadas} de {totalTareas}
         </h1>
     )
 }
+
 export { Encabezado }
